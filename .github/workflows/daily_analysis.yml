@@ -49,7 +49,6 @@ jobs:
           name: analysis-report
           path: ./report.html
         
-    steps:
       - name: 检出代码
         uses: actions/checkout@v4
       
