@@ -43,8 +43,12 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           STOCK_LIST: ${{ secrets.STOCK_LIST }}
     # 添加超时限制，防止任务卡死
-    timeout-minutes: 30
-    
+      - name: Upload results (optional)
+        uses: actions/upload-artifact@v4
+        with:
+          name: analysis-report
+          path: ./report.html
+        
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
