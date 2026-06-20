@@ -26,6 +26,9 @@ concurrency:
 jobs:
   analyze:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
     # 添加超时限制，防止任务卡死
     timeout-minutes: 30
     
