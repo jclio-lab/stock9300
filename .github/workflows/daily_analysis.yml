@@ -57,7 +57,19 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-      
+
+      - name: Test email sending
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ jihchonglio@gmail.com }}
+          password: ${{ giulrgcfwbygdkqe }}
+          subject: "Test Email from GitHub Actions"
+          body: "If you see this, your email settings are correct!"
+          to: ${{ jihchonglio@gmail.com }}
+          from: ${{ jihchonglio@gmail.com }}
+
       - name: 安装依赖
         run: |
           pip install --upgrade pip
