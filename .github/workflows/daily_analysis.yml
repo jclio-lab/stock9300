@@ -67,8 +67,8 @@ jobs:
           password: ${{ giulrgcfwbygdkqe }}
           subject: "Test Email from GitHub Actions"
           body: "If you see this, your email settings are correct!"
-          to: ${{ jihchonglio@gmail.com }}
-          from: ${{ jihchonglio@gmail.com }}
+          to: ${{ secrets.EMAIL_SENDER }}
+          from: ${{ secrets.EMAIL_RECEIVERS }}
 
       - name: 安装依赖
         run: |
@@ -87,7 +87,7 @@ jobs:
           # Gemini AI（主选）
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           STOCK_LIST: ${{ secrets.STOCK_LIST }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || secrets.GEMINI_MODEL || 'gemini-2.5-flash' }}
+          GEMINI_MODEL: ${{ 'gemini-2.5-flash' }}
           GEMINI_MODEL_FALLBACK: ${{ vars.GEMINI_MODEL_FALLBACK || secrets.GEMINI_MODEL_FALLBACK || 'gemini-2.0-flash' }}
           GEMINI_REQUEST_DELAY: '3.0'
           
@@ -123,9 +123,9 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           
           # 方式四：邮件
-          EMAIL_SENDER: ${{ jihchonglio@gmail.com }}
-          EMAIL_PASSWORD: ${{ giulrgcfwbygdkqe }}
-          EMAIL_RECEIVERS: ${{ jihchonglio@gmail.com }}
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ giulrgcfjwbygdkqe }}
+          EMAIL_RECEIVERS: ${{ secrets.EMAIL_RECEIVERS }}
           
           # 方式五：Pushover
           PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
