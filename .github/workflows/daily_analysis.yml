@@ -63,12 +63,12 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ jihchonglio@gmail.com }}
-          password: ${{ giulrgcfwbygdkqe }}
+          username: ${{ secrets.EMAIL_SENDE }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Test Email from GitHub Actions"
           body: "If you see this, your email settings are correct!"
-          to: ${{ secrets.EMAIL_SENDER }}
-          from: ${{ secrets.EMAIL_RECEIVERS }}
+          to: ${{ secrets.EMAIL_RECEIVERS }}
+          from: ${{ secrets.EMAIL_SENDER }}
 
       - name: 安装依赖
         run: |
@@ -86,7 +86,6 @@ jobs:
           # ==========================================
           # Gemini AI（主选）
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          STOCK_LIST: ${{ secrets.STOCK_LIST }}
           GEMINI_MODEL: ${{ 'gemini-2.5-flash' }}
           GEMINI_MODEL_FALLBACK: ${{ vars.GEMINI_MODEL_FALLBACK || secrets.GEMINI_MODEL_FALLBACK || 'gemini-2.0-flash' }}
           GEMINI_REQUEST_DELAY: '3.0'
