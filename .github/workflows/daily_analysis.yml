@@ -123,7 +123,7 @@ jobs:
           
           # 方式四：邮件
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
-          EMAIL_PASSWORD: ${{ giulrgcfjwbygdkqe }}
+          EMAIL_PASSWORD: ${{ secrets.giulrgcfjwbygdkqe }}
           EMAIL_RECEIVERS: ${{ secrets.EMAIL_RECEIVERS }}
           
           # 方式五：Pushover
