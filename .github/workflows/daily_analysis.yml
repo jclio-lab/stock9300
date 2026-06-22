@@ -68,7 +68,7 @@ jobs:
           subject: "Test Email from GitHub Actions"
           body: "If you see this, your email settings are correct!"
           to: ${{ secrets.EMAIL_RECEIVERS }}
-          from: ${{ jihchonglio@gmail.com }}
+          from: ${{ secrets.EMAIL_SENDER }}
 
       - name: 安装依赖
         run: |
